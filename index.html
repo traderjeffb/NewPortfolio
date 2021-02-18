@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/site.js"></script>
+  </head>
+
+  <title>Portfolio</title>
+
+  <body>
+      <nav class="nav-bar">
+        <ul>
+          <li class="list-item"><a href="index.html">Home</a></li>
+          <li class="list-item" onclick="displayPortfolio()">
+            <a href="###">Portfolio</a>
+          </li>
+          <li class="list-item" onclick="displayContact()">
+            <a href="###">Contact</li>
+          <!-- <li class="list-item"><a href="/About.html">About</a></li> -->
+        </ul>
+      </nav>
+    <div class="main_page">
+
+      <div class="portfolio-container fade-in" id="portfolio-container">
+        <div class="portfolio1" style= "color:rgb(207, 252, 252)" 
+          onclick="location.href='/portfolio1/index.html';"style="cursor:pointer;">
+          3rd party API
+          Portfolio Project 1
+          <div class="notes1" id="notes1">
+            This portfolio project includes use of HTML, CSS, JavaScript and it calls a 3rd party API to get stock market data which is presented on a chart.
+        </div>
+      </div>
+
+        <div class="portfolio2" style= "color:rgb(207, 252, 252)" onclick="location.href= 
+          'https://   github.com/traderjeffb/MusicRater/tree/master/MusicRater/Controllers';"" notes2">
+          Web API
+          Portfolio Project 2
+          <div class="notes2" id="notes2">
+            This portfolio project is a "MusicRater" API that anyone could connect to (provided it was live on the internet) to rate a song, album, artist, or music store. It is written in C# using the .NET framework.
+          </div>
+        </div>
+
+        <div class="portfolio3"  id="notes3">
+          <script>
+          var today = new Date();
+          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          </script>
+            <h5>Last Updated: </h5>
+            <br>
+            <script> document.write(today)</script>
+          <div class="notes3" id="notes3">
+            this portfolio used CSS and html
+          </div>
+
+        </div>
+      </div>
+      <div class="info-container" id="info-container">
+        <div class="details" id="details">
+          Jeff Beeson<br>
+          1816 S. O'Hare Blvd<br>
+          Yorktown, IN 47396<br>
+          765-228-1104
+        </div>
+      </div>
+  </div>
+
+      <script>
+        function displayPortfolio() {
+          document.getElementById("info-container").style.visibility = "hidden"
+          document.getElementById("details").style.visibility = "hidden"
+          document.getElementById("portfolio-container").style.visibility ="visible";
+      }
+      </script>
+      <script>
+        function displayContact() {
+          document.getElementById("portfolio-container").style.visibility ="hidden"
+          document.getElementById("info-container").style.visibility = "visible"
+          document.getElementById("details").style.visibility = "visible";
+        }
+      </script>
+    </body>
+  </div>
+</html>

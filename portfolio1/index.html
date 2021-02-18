@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/portfolio1/main.css" />
+    <script src="/portfolio1/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+    <title>Portfolio1</title>
+  </head>
+
+  <body>
+    <div class="grid_container">
+      <div class="grid_item box1" id="box1">
+        <a href="/index.html">This link will take you back to the main page.</a>
+      </div>
+      <div class="box2">
+        
+          Stock:<input type="text" id="ticker" 
+          onkeyup="this.value = this.value.toUpperCase();"
+          autofocus="autofocus" >
+        </input>
+          <br>
+          <button id="submit" onclick = "chartIt() ; selectText()">Submit</button>
+        <p>In the textbox above enter a stock ticker and click submit.</p>
+        <br>
+        <p style="color:red" class="block"><strong>You might have to enter a ticker symbol more than once or click "submit" a second time.<br>
+          The free stock api doesn't always work the first time.</strong></p>
+           <br>
+           <br>
+        <p id="ticker_sidebar">Some common stock tickers are:
+          <ul.no-bullets>
+            <li>Facebook = FB</li>
+            <li>MicroSoft = MSFT</li>
+            <li>Ford = F</li>
+            <li>Apple = AAPL</li>
+          </ul> 
+         </p>
+      </div>
+      <div class="grid_item box3">
+        <canvas id="myChart"class="myChart"></canvas>
+        <script>
+        chartIt();        
+
+        async function chartIt() {
+          const data = await getQuote();  
+          const ctx = document.getElementById("myChart").getContext('2d');
+          const myChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: data.xs,
+              datasets: [
+                {
+                  label:"Price Chart of   " + input,
+                  data: data.ys,
+                  fill:false,
+                  backgroundColor: "rgb(255, 99, 132)",
+                  borderColor: "rgb(255, 99, 132)"
+                  
+                }
+              ]
+            },
+
+          options: { }
+        });
+        }  
+        </script>
+      </div>
+      <div class="box4">
+        <h6>created by Jeff Beeson</h6>
+        <h6>all rights reserved</h6>
+        <h6>copywright 2021</h6>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
